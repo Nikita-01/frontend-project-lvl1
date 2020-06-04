@@ -88,3 +88,33 @@ export const progression = () => {
     };
   };
 };
+
+const isPrime = (num) => {
+  let result = 0;
+  if (num > 3) {
+    for (let i = Math.floor(num / 2); i > 1; i -= 1) {
+      if ((num % i) === 0) {
+        result += 1;
+      }
+    }
+      }
+  return (result === 0) ? 'yes': 'no';
+}
+export const primeGame = () => {
+  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+  for (let i = 1; i <= 3; i += 1) {
+    const number = Math.floor(Math.random() * 100);
+    console.log('Question: ' + number);
+    const answer = readlineSync.question('Your answer: ');
+    if (isPrime(number) === answer) {
+      console.log('Correct!');
+      if (i === 3) {
+        console.log('Congratulations, ' + userName + '!');
+      }
+    } else {
+      i = 4;
+      console.log(answer + ' is wrong answer ;(. Correct answer was ' + isPrime(number));
+      console.log('Let\'s try again, ' + userName + '!');
+    }
+  }
+};
