@@ -25,3 +25,37 @@ export const evenGame = () => {
     }
   }
 };
+
+export const calculator = () => {
+  console.log('What is the result of the expression?');
+  for (let i = 1; i <= 3; i += 1) {
+    const firstNumber = Math.floor(Math.random() * 100);
+    const secondNumber = Math.floor(Math.random() * 100);
+    const operators = ['-', '+', '*'];
+    const operatorIndex = Math.floor(Math.random() * 3);
+    const question = firstNumber + operators[operatorIndex] + secondNumber;
+    const resultOf = () => {
+      let result = 0;
+      if (operatorIndex === 0) {
+      return result = firstNumber - secondNumber;
+      } else if (operatorIndex === 1) {
+        return result = firstNumber + secondNumber;
+      } else if (operatorIndex === 2) {
+        return  result = firstNumber * secondNumber;
+      }
+
+    };
+    console.log('Question: ' + question);
+    const answer = readlineSync.question('Your answer: ');
+    if (answer == resultOf()) {
+      console.log('Correct!');
+      if (i === 3) {
+        console.log('Congratulations, ' + userName + '!');
+      }
+    } else {
+      i = 4;
+      console.log(answer + ' is wrong answer ;(. Correct answer was ' + resultOf());
+      console.log('Let\'s try again, ' + userName + '!');
+    }
+  }
+};
