@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { greeting, primeGame } from "../src/cli.js";
+import { isPrime, quest, question } from "../src/games/brain-prime.js";
+import { brainGames } from "../src/index.js";
 
-greeting();
-primeGame();
+brainGames(question, quest, isPrime);

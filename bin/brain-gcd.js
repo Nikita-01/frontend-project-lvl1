@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { greeting, gcd } from "../src/cli.js";
+import { gcd, quest, question } from "../src/games/brain-gcd.js";
+import { brainGames } from "../src/index.js";
 
-greeting();
-gcd();
+brainGames(question, quest, gcd);
